@@ -41,8 +41,7 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPDeviceAddLineAction extends ActionMessage
-{
+class SCCPDeviceAddLineAction extends ActionMessage {
     /**
      * Constructor.
      *
@@ -51,8 +50,7 @@ class SCCPDeviceAddLineAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($DeviceName, $LineName)
-    {
+    public function __construct($DeviceName, $LineName) {
         parent::__construct('SCCPDeviceAddLine');
         
         $this->setKey('DeviceName', $DeviceName);

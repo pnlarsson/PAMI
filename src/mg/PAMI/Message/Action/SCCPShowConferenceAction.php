@@ -41,9 +41,8 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPShowConferenceAction extends ActionMessage
-{
-	
+class SCCPShowConferenceAction extends ActionMessage {
+    
     /**
      * Constructor.
      *
@@ -51,8 +50,7 @@ class SCCPShowConferenceAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($ConferenceId)
-    {
+    public function __construct($ConferenceId) {
         parent::__construct('SCCPShowConference');
         $this->setResponseHandler("SCCPGeneric");
         $this->setKey('ConferenceId', $ConferenceId);

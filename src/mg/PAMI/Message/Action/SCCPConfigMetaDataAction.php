@@ -41,18 +41,16 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPConfigMetaDataAction extends ActionMessage
-{
+class SCCPConfigMetaDataAction extends ActionMessage {
     /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct($segment=false)
-    {
+    public function __construct($segment = false) {
         parent::__construct('SCCPConfigMetaData');
         if ($segment != false) {
-        	$this->setKey('Segment', $segment);
+            $this->setKey('Segment', $segment);
         }
         $this->setResponseHandler("SCCPGeneric");
     }

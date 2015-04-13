@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when SCCPHintLineStateEntry arrives.
@@ -43,76 +43,67 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPHintLineStateEntryEvent extends EventMessage
-{
-	/**
-	 * Returns key: 'ChannelType'.
-	 *
-	 * @return string
-	 */
-	public function getChannelType()
-	{
-      return $this->getKey('ChannelType');
-	}
+class SCCPHintLineStateEntryEvent extends EventMessage {
+    /**
+     * Returns key: 'ChannelType'.
+     *
+     * @return string
+     */
+    public function getChannelType() {
+        return $this->getKey('ChannelType');
+    }
 
-	/**
-	 * Returns key: 'ChannelObjectType'.
-	 *
-	 * @return string
-	 */
-	public function getChannelObjectType()
-	{
-      return $this->getKey('ChannelObjectType');
-	}
+    /**
+     * Returns key: 'ChannelObjectType'.
+     *
+     * @return string
+     */
+    public function getChannelObjectType() {
+        return $this->getKey('ChannelObjectType');
+    }
 
-	/**
-	 * Returns key: 'LineName'.
-	 *
-	 * @return string
-	 */
-	public function getLineName()
-	{
-      return $this->getKey('LineName');
-	}
+    /**
+     * Returns key: 'LineName'.
+     *
+     * @return string
+     */
+    public function getLineName() {
+        return $this->getKey('LineName');
+    }
 
-	/**
-	 * Returns key: 'State'.
-	 *
-	 * @return string
-	 */
-	public function getState()
-	{
-      return $this->getKey('State');
-	}
+    /**
+     * Returns key: 'State'.
+     *
+     * @return string
+     */
+    public function getState() {
+        return $this->getKey('State');
+    }
 
-	/**
-	 * Returns key: 'CallInfoNumber:'.
-	 *
-	 * @return string
-	 */
-	public function getCallInfoNumber()
-	{
-      return $this->getKey('CallInfoNumber:');
-	}
+    /**
+     * Returns key: 'CallInfoNumber:'.
+     *
+     * @return string
+     */
+    public function getCallInfoNumber() {
+        return $this->getKey('CallInfoNumber:');
+    }
 
-	/**
-	 * Returns key: 'CallInfoName:'.
-	 *
-	 * @return string
-	 */
-	public function getCallInfoName()
-	{
-      return $this->getKey('CallInfoName:');
-	}
+    /**
+     * Returns key: 'CallInfoName:'.
+     *
+     * @return string
+     */
+    public function getCallInfoName() {
+        return $this->getKey('CallInfoName:');
+    }
 
-	/**
-	 * Returns key: 'Direction'.
-	 *
-	 * @return string
-	 */
-	public function getDirection()
-	{
-      return $this->getKey('Direction');
-	}
-
+    /**
+     * Returns key: 'Direction'.
+     *
+     * @return string
+     */
+    public function getDirection() {
+        return $this->getKey('Direction');
+    }
 }

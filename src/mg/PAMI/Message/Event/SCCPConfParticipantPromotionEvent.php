@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when the 'SCCP Conference Participant Promotion' Event arrives.
@@ -43,36 +43,31 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPConfParticipantPromotionEvent extends EventMessage
-{
-	/**
-	 * Returns key: 'ConfId'.
-	 *
-	 * @return integer
-	 */
-	public function getConfId()
-	{
-      return intval($this->getKey('ConfId'));
-	}
+class SCCPConfParticipantPromotionEvent extends EventMessage {
+    /**
+     * Returns key: 'ConfId'.
+     *
+     * @return integer
+     */
+    public function getConfId() {
+        return intval($this->getKey('ConfId'));
+    }
 
-	/**
-	 * Returns key: 'PartId'.
-	 *
-	 * @return integer
-	 */
-	public function getPartId()
-	{
-      return intval($this->getKey('PartId'));
-	}
+    /**
+     * Returns key: 'PartId'.
+     *
+     * @return integer
+     */
+    public function getPartId() {
+        return intval($this->getKey('PartId'));
+    }
 
-	/**
-	 * Returns key: 'Moderator'.
-	 *
-	 * @return boolean
-	 */
-	public function getModerator()
-	{
-      return $this->getBoolKey('Moderator');
-	}
-
+    /**
+     * Returns key: 'Moderator'.
+     *
+     * @return boolean
+     */
+    public function getModerator() {
+        return $this->getBoolKey('Moderator');
+    }
 }

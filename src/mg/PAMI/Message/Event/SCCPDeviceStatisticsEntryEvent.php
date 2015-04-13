@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPDeviceStatisticsEntryEvent extends EventMessage
-{
+class SCCPDeviceStatisticsEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,8 +58,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
 
@@ -70,8 +67,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->getKey('Type');
     }
 
@@ -80,8 +76,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getCalls()
-    {
+    public function getCalls() {
         return intval($this->getKey('Calls'));
     }
 
@@ -90,8 +85,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getPacketsSent()
-    {
+    public function getPacketsSent() {
         return intval($this->getKey('PcktSnt'));
     }
 
@@ -100,8 +94,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getPacketsReceived()
-    {
+    public function getPacketsReceived() {
         return intval($this->getKey('PcktRcvd'));
     }
 
@@ -110,8 +103,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getPacketsLost()
-    {
+    public function getPacketsLost() {
         return intval($this->getKey('Lost'));
     }
 
@@ -120,8 +112,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getJitter()
-    {
+    public function getJitter() {
         return intval($this->getKey('Jitter'));
     }
 
@@ -130,8 +121,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getLatency()
-    {
+    public function getLatency() {
         return intval($this->getKey('Latency'));
     }
 
@@ -140,8 +130,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return float
      */
-    public function getQuality()
-    {
+    public function getQuality() {
         return floatval($this->getKey('Quality'));
     }
 
@@ -150,8 +139,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return float
      */
-    public function getAverageQuality()
-    {
+    public function getAverageQuality() {
         return floatval($this->getKey('avgQual'));
     }
 
@@ -160,8 +148,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return float
      */
-    public function getMeanQuality()
-    {
+    public function getMeanQuality() {
         return floatval($this->getKey('meanQual'));
     }
 
@@ -170,8 +157,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return float
      */
-    public function getMaxQuality()
-    {
+    public function getMaxQuality() {
         return floatval($this->getKey('maxQual'));
     }
 
@@ -180,8 +166,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return float
      */
-    public function getReceivedConcealed()
-    {
+    public function getReceivedConcealed() {
         return floatval($this->getKey('rConceal'));
     }
 
@@ -190,8 +175,7 @@ class SCCPDeviceStatisticsEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getSentConcealed()
-    {
+    public function getSentConcealed() {
         return intval($this->getKey('sConceal'));
     }
 }

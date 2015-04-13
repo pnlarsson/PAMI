@@ -29,9 +29,10 @@
  */
 namespace PAMI\Message\Response;
 
-use PAMI\Message\Response\ResponseMessage;
-use PAMI\Message\Event\EventMessage;
-use PAMI\Exception\PAMIException;
+use PAMI\Message\Response\ ResponseMessage;
+use PAMI\Message\Event\ EventMessage;
+use PAMI\ Exception\ PAMIException;
+
 /**
  * A generic SCCP response message from ami.
  *
@@ -44,8 +45,8 @@ use PAMI\Exception\PAMIException;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPGenericResponse extends ResponseMessage
-{
+class SCCPGenericResponse extends ResponseMessage {
+
     /**
      * Child Tables
      * @var EventMessage[]
@@ -67,44 +68,37 @@ class SCCPGenericResponse extends ResponseMessage
      *
      * @return void
      */
-    public function addEvent(EventMessage $event)
-    {
-    	// not eventlist (start/complete)
-        if (stristr($event->getEventList(), 'start') === false
-            && stristr($event->getEventList(), 'complete') === false
-            && stristr($event->getName(), 'complete') === false
-        ) {
-        	$unknownevent = "PAMI\\Message\\Event\\UnknownEvent";
-        	if (!($event instanceof $unknownevent)) {
-				// Handle TableStart/TableEnd Differently 
-				if (stristr($event->getName(), 'TableStart') != false) {
-					$this->_temptable = array();
-					$this->_temptable['Name'] = $event->getTableName();
-					$this->_temptable['Entries'] = array();
-				} else if (stristr($event->getName(), 'TableEnd') != false) {
-					if (!is_array($this->_tables)) {
-						$this->_tables = array();
-					}
-					$this->_tables[$event->getTableName()] = $this->_temptable;
-					unset($this->_temptable);
-				} else if (is_array($this->_temptable)) {
-					$this->_temptable['Entries'][] = $event;
-				} else {
-					// add regular event
-					$this->_events[] = $event;
-				}
-			} else {
-				// add regular event
-				$this->_events[] = $event;
-			}
+    public function addEvent(EventMessage$event) {
+        // not eventlist (start/complete)
+        if (stristr($event->getEventList(), 'start') === false && stristr($event->getEventList(), 'complete') === false && stristr($event->getName(), 'complete') === false) {
+            $unknownevent = "PAMI\\Message\\Event\\UnknownEvent";
+            if (!($event instanceof $unknownevent)) {
+                // Handle TableStart/TableEnd Differently
+                if (stristr($event->getName(), 'TableStart') != false) {
+                    $this->_temptable = array();
+                    $this->_temptable['Name'] = $event->getTableName();
+                    $this->_temptable['Entries'] = array();
+                } elseif (stristr($event->getName(), 'TableEnd') != false) {
+                    if (!is_array($this->_tables)) {
+                        $this->_tables = array();
+                    }
+                    $this->_tables[$event->getTableName()] = $this->_temptable;
+                    unset($this->_temptable);
+                } elseif (is_array($this->_temptable)) {
+                    $this->_temptable['Entries'][] = $event;
+                } else {
+                    // add regular event
+                    $this->_events[] = $event;
+                }
+            } else {
+                // add regular event
+                $this->_events[] = $event;
+            }
         }
         // finish eventlist
-        if (
-            stristr($event->getEventList(), 'complete') != false
-            || stristr($event->getName(), 'complete') != false
-		) {
+        if (stristr($event->getEventList(), 'complete') != false || stristr($event->getName(), 'complete') != false) {
             $this->_completed = true;
-		}
+        }
     }
 
     /**
@@ -112,12 +106,11 @@ class SCCPGenericResponse extends ResponseMessage
      *
      * @return boolean
      */
-    public function hasTable()
-    {
-		if (is_array($this->_tables)) {
-			return true;
-		}
-		return false;
+    public function hasTable() {
+        if (is_array($this->_tables)) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -125,23 +118,20 @@ class SCCPGenericResponse extends ResponseMessage
      *
      * @return EventMessage[]
      */
-    public function getTableNames()
-    {
-    	return array_keys($this->_tables);
+    public function getTableNames() {
+        return array_keys($this->_tables);
     }
-
 
     /**
      * Returns all associated events for this response->tablename.
      *
      * @return EventMessage[]
      */
-    public function getTable($tablename)
-    {
+    public function getTable($tablename) {
         if ($this->hasTable() && array_key_exists($tablename, $this->_tables)) {
-        	return $this->_tables[$tablename];
+            return $this->_tables[$tablename];
         }
-		throw new PAMIException("No such table.");        
+        throw new PAMIException("No such table.");
     }
 
     /**
@@ -149,15 +139,14 @@ class SCCPGenericResponse extends ResponseMessage
      *
      * @return array
      */
-    public function getJSON()
-    {
-		if (strlen($this->getKey('JSON')) > 0) {
-			if (($json = json_decode($this->getKey('JSON'), true)) != false) {
-				return $json;
-			}
-		}
-		throw new PAMIException("No JSON Key found to return.");
-	}
+    public function getJSON() {
+        if (strlen($this->getKey('JSON')) > 0) {
+            if (($json = json_decode($this->getKey('JSON'), true)) != false) {
+                return $json;
+            }
+        }
+        throw new PAMIException("No JSON Key found to return.");
+    }
 
     /**
      * Constructor.
@@ -166,8 +155,7 @@ class SCCPGenericResponse extends ResponseMessage
      *
      * @return void
      */
-    public function __construct($rawContent)
-    {
+    public function __construct($rawContent) {
         parent::__construct($rawContent);
     }
 }

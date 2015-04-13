@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when the 'SCCP Conference Lock' Event arrives.
@@ -43,26 +43,22 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPConfLockEvent extends EventMessage
-{
-	/**
-	 * Returns key: 'ConfId'.
-	 *
-	 * @return integer
-	 */
-	public function getConfId()
-	{
-      return intval($this->getKey('ConfId'));
-	}
+class SCCPConfLockEvent extends EventMessage {
+    /**
+     * Returns key: 'ConfId'.
+     *
+     * @return integer
+     */
+    public function getConfId() {
+        return intval($this->getKey('ConfId'));
+    }
 
-	/**
-	 * Returns key: 'Enabled'.
-	 *
-	 * @return integer
-	 */
-	public function getEnabled()
-	{
-      return $this->getBoolKey('Enabled');
-	}
-
+    /**
+     * Returns key: 'Enabled'.
+     *
+     * @return integer
+     */
+    public function getEnabled() {
+        return $this->getBoolKey('Enabled');
+    }
 }

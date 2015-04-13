@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPShowLinesCompleteEvent extends EventMessage
-{
+class SCCPShowLinesCompleteEvent extends EventMessage {
     /**
      * Returns key: 'ListItems'.
      *
      * @return int
      */
-    public function getListItems()
-    {
+    public function getListItems() {
         return intval($this->getKey('ListItems'));
     }
 }

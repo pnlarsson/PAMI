@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Action;
 
-use PAMI\Exception\PAMIException;
+use PAMI\ Exception\ PAMIException;
 
 /**
  * SCCP Forward Line action message.
@@ -43,8 +43,7 @@ use PAMI\Exception\PAMIException;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPLineForwardUpdateAction extends ActionMessage
-{
+class SCCPLineForwardUpdateAction extends ActionMessage {
     /**
      * Constructor.
      *
@@ -56,19 +55,18 @@ class SCCPLineForwardUpdateAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($DeviceName, $LineName, $ForwardType, $Disable=false, $Number=false)
-    {
+    public function __construct($DeviceName, $LineName, $ForwardType, $Disable = false, $Number = false) {
         parent::__construct('SCCPLineForwardUpdate');
         
         $this->setKey('DeviceName', $DeviceName);
         $this->setKey('LineName', $LineName);
-
+        
         if (in_array(strtolower($ForwardType), array('all', 'busy'))) {
-		    $this->setKey('ForwardType', $ForwardType);
+            $this->setKey('ForwardType', $ForwardType);
         } else {
             throw new PAMIException('ForwardType has to be one of \'all\', \'busy\'.');
         }
-
+        
         if ($Disable == true) {
             $this->setKey('Disable', 'on');
             if ($Number != false) {

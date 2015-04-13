@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPSessionEntryEvent extends EventMessage
-{
+class SCCPSessionEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,8 +58,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
 
@@ -70,8 +67,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getSocket()
-    {
+    public function getSocket() {
         return intval($this->getKey('Socket'));
     }
 
@@ -80,8 +76,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getIP()
-    {
+    public function getIP() {
         return $this->getKey('IP');
     }
 
@@ -90,8 +85,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getPort()
-    {
+    public function getPort() {
         return $this->getKey('Port');
     }
 
@@ -100,8 +94,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getKeepAlive()
-    {
+    public function getKeepAlive() {
         return $this->getKey('KA');
     }
 
@@ -110,8 +103,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getKeepAliveInterval()
-    {
+    public function getKeepAliveInterval() {
         return intval($this->getKey('KAI'));
     }
 
@@ -120,8 +112,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDeviceName()
-    {
+    public function getDeviceName() {
         return $this->getKey('DeviceName');
     }
 
@@ -130,8 +121,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getState()
-    {
+    public function getState() {
         return $this->getKey('State');
     }
 
@@ -140,8 +130,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getType()
-    {
+    public function getType() {
         return $this->getKey('Type');
     }
 
@@ -150,8 +139,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getRegState()
-    {
+    public function getRegState() {
         return $this->getKey('RegState');
     }
 
@@ -160,8 +148,7 @@ class SCCPSessionEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getToken()
-    {
+    public function getToken() {
         return $this->getKey('Token');
     }
 }

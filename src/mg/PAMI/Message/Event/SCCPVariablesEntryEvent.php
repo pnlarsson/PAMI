@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPVariablesEntryEvent extends EventMessage
-{
+class SCCPVariablesEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,8 +58,7 @@ class SCCPVariablesEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
 
@@ -70,8 +67,7 @@ class SCCPVariablesEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->getKey('Name');
     }
 
@@ -80,8 +76,7 @@ class SCCPVariablesEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getValue()
-    {
+    public function getValue() {
         return $this->getKey('Value');
     }
 }

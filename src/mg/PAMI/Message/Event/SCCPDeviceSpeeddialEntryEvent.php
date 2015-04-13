@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPDeviceSpeeddialEntryEvent extends EventMessage
-{
+class SCCPDeviceSpeeddialEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,17 +58,16 @@ class SCCPDeviceSpeeddialEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
+
     /**
      * Returns key: 'Id'.
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return intval($this->getKey('Id'));
     }
 
@@ -79,8 +76,7 @@ class SCCPDeviceSpeeddialEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->getKey('Name');
     }
 
@@ -89,8 +85,7 @@ class SCCPDeviceSpeeddialEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getNumber()
-    {
+    public function getNumber() {
         return $this->getKey('Number');
     }
 
@@ -99,8 +94,7 @@ class SCCPDeviceSpeeddialEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getHint()
-    {
+    public function getHint() {
         return $this->getKey('Hint');
     }
 }

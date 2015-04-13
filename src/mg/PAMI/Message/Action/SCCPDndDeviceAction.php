@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Action;
 
-use PAMI\Exception\PAMIException;
+use PAMI\ Exception\ PAMIException;
 
 /**
  * Hangup action message.
@@ -43,8 +43,7 @@ use PAMI\Exception\PAMIException;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPDndDeviceAction extends ActionMessage
-{
+class SCCPDndDeviceAction extends ActionMessage {
     /**
      * Constructor.
      *
@@ -53,15 +52,14 @@ class SCCPDndDeviceAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($DeviceName, $State)
-    {
+    public function __construct($DeviceName, $State) {
         parent::__construct('SCCPDndDevice');
         
         $this->setKey('DeviceId', $DeviceName);
         if (in_array(strtolower($State), array('off', 'reject', 'silent'))) {
-		    $this->setKey('State', $State);
-	    } else {
-	        throw new PAMIException('State has to be one of \'off\', \'reject\', \'silent\'.');
+            $this->setKey('State', $State);
+        } else {
+            throw new PAMIException('State has to be one of \'off\', \'reject\', \'silent\'.');
         }
     }
 }

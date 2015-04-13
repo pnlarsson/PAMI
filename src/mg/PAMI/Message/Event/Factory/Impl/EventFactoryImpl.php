@@ -28,12 +28,12 @@
  * limitations under the License.
  *
  */
-namespace PAMI\Message\Event\Factory\Impl;
+namespace PAMI\ Message\ Event\ Factory\ Impl;
 
-use PAMI\Message\Event\EventMessage;
-use PAMI\Message\Event\UnknownEvent;
-use PAMI\Message\Message;
-use PAMI\Exception\PAMIException;
+use PAMI\ Message\ Event\ EventMessage;
+use PAMI\ Message\ Event\ UnknownEvent;
+use PAMI\ Message\ Message;
+use PAMI\ Exception\ PAMIException;
 
 /**
  * This factory knows which event to return according to a given raw message
@@ -48,9 +48,8 @@ use PAMI\Exception\PAMIException;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class EventFactoryImpl
-{
-	private $_logger;
+class EventFactoryImpl {
+    private $_logger;
 
     /**
      * This is our factory method.
@@ -59,27 +58,29 @@ class EventFactoryImpl
      *
      * @return EventMessage
      */
-//    public static function createFromRaw($message)
-    public function createFromRaw($message)
-    {
+    //    public static function createFromRaw($message)
+    public function createFromRaw($message) {
         $eventStart = strpos($message, 'Event: ') + 7;
-/*
-        if ($eventStart > strlen($message)) {
-            return new UnknownEvent($message);
-        }
-*/
+
+        /*
+                if ($eventStart > strlen($message)) {
+                    return new UnknownEvent($message);
+                }
+        */
         $eventEnd = strpos($message, Message::EOL, $eventStart);
         if ($eventEnd === false) {
             $eventEnd = strlen($message);
         }
         $name = substr($message, $eventStart, $eventEnd - $eventStart);
-        $className = '\\PAMI\\Message\\Event\\' . $name . 'Event';
-		if (class_exists($className, true)) {
-			if ($this->_logger->isDebugEnabled()) $this->_logger->debug("Created: " . $className . "\n");
-			return new $className($message);
-		}
- 		if ($this->_logger->isDebugEnabled()) $this->_logger->debug("Created: " . '\\PAMI\\Message\\Event\\UnknownEvent' . "\n");
-		return new UnknownEvent($message);
+        $className = '\\PAMI\\Message\\Event\\'.$name.'Event';
+        if (class_exists($className, true)) {
+            if ($this->_logger->isDebugEnabled()) 
+                $this->_logger->debug("Created: ".$className."\n");
+            return new $className($message);
+        }
+        if ($this->_logger->isDebugEnabled()) 
+            $this->_logger->debug("Created: ".'\\PAMI\\Message\\Event\\UnknownEvent'."\n");
+        return new UnknownEvent($message);
     }
 
     /**
@@ -87,9 +88,9 @@ class EventFactoryImpl
      *
      * @return void
      */
-    public function __construct($logger)
-    {
-		$this->_logger = $logger ? $logger : \Logger::getLogger(__CLASS__);
-		if ($this->_logger->isDebugEnabled()) $this->_logger->debug('------ Event Factory Created: ------ ' . "\n");
+    public function __construct($logger) {
+        $this->_logger = $logger ? $logger : \ Logger::getLogger(__CLASS__);
+        if ($this->_logger->isDebugEnabled()) 
+            $this->_logger->debug('------ Event Factory Created: ------ '."\n");
     }
 }

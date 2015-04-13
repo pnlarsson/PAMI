@@ -41,8 +41,8 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPAnswerCallAction extends ActionMessage
-{
+class SCCPAnswerCallAction extends ActionMessage {
+
     /**
      * Constructor.
      *
@@ -51,9 +51,8 @@ class SCCPAnswerCallAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($ChannelId, $DeviceId)
-    {
-    	// is meant to be SCCPAnswerCall1 not SCCPAnswerCall (for now)
+    public function __construct($ChannelId, $DeviceId) {
+        // is meant to be SCCPAnswerCall1 not SCCPAnswerCall (for now)
         parent::__construct('SCCPAnswerCall1');
         $this->setKey('ChannelId', $ChannelId);
         $this->setKey('DeviceId', $DeviceId);

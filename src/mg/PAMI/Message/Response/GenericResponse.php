@@ -32,9 +32,8 @@ namespace PAMI\Message\Response;
 //use PAMI\Message\Message;
 //use PAMI\Message\IncomingMessage;
 //use PAMI\Message\Event\EventMessage;
-use PAMI\Message\Response\ResponseMessage;
+use PAMI\Message\Response\ ResponseMessage;
 //use PAMI\Exception\PAMIException;
-
 /**
  * A generic response message from ami.
  *
@@ -47,8 +46,7 @@ use PAMI\Message\Response\ResponseMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class GenericResponse extends ResponseMessage
-{
+class GenericResponse extends ResponseMessage {
     /**
      * Constructor.
      *
@@ -56,8 +54,7 @@ class GenericResponse extends ResponseMessage
      *
      * @return void
      */
-    public function __construct($rawContent)
-    {
+    public function __construct($rawContent) {
         parent::__construct($rawContent);
     }
 }

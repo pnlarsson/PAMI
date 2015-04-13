@@ -41,8 +41,7 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPHangupCallAction extends ActionMessage
-{
+class SCCPHangupCallAction extends ActionMessage {
     /**
      * Constructor.
      *
@@ -50,8 +49,7 @@ class SCCPHangupCallAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($ChannelId)
-    {
+    public function __construct($ChannelId) {
         parent::__construct('SCCPHangupCall');
         
         $this->setKey('ChannelId', $ChannelId);

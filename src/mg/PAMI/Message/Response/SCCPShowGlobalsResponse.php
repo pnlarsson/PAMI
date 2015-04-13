@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Response;
 
-use PAMI\Message\Response\ResponseMessage;
+use PAMI\Message\Response\ ResponseMessage;
 
 /**
  * A sccp show globals response message from ami.
@@ -43,8 +43,7 @@ use PAMI\Message\Response\ResponseMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPShowGlobalsResponse extends SCCPGenericResponse
-{
+class SCCPShowGlobalsResponse extends SCCPGenericResponse {
     /**
      * Constructor.
      *
@@ -52,18 +51,16 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return void
      */
-    public function __construct($rawContent)
-    {
+    public function __construct($rawContent) {
         parent::__construct($rawContent);
     }
-    
+
     /**
      * Returns key: 'ConfigFile'.
      *
      * @return string
      */
-    public function getConfigFile()
-    {
+    public function getConfigFile() {
         return $this->getKey('ConfigFile');
     }
 
@@ -72,8 +69,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getPlatformByteOrder()
-    {
+    public function getPlatformByteOrder() {
         return $this->getKey('PlatformByteOrder');
     }
 
@@ -82,8 +78,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getServerName()
-    {
+    public function getServerName() {
         return $this->getKey('ServerName');
     }
 
@@ -92,8 +87,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getBindAddress()
-    {
+    public function getBindAddress() {
         return $this->getKey('BindAddress');
     }
 
@@ -102,8 +96,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getExternIP()
-    {
+    public function getExternIP() {
         return $this->getKey('ExternIP');
     }
 
@@ -112,8 +105,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getLocalnet()
-    {
+    public function getLocalnet() {
         return $this->getKey('Localnet');
     }
 
@@ -122,8 +114,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getDenyPermit()
-    {
+    public function getDenyPermit() {
         return $this->getKey('DenyPermit');
     }
 
@@ -132,8 +123,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getDirectRTP()
-    {
+    public function getDirectRTP() {
         return $this->getKey('DirectRTP');
     }
 
@@ -142,8 +132,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getNat()
-    {
+    public function getNat() {
         return $this->getKey('Nat');
     }
 
@@ -152,8 +141,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getKeepalive()
-    {
+    public function getKeepalive() {
         return intval($this->getKey('Keepalive'));
     }
 
@@ -162,8 +150,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getDebug()
-    {
+    public function getDebug() {
         return $this->getKey('Debug');
     }
 
@@ -172,8 +159,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getDateFormat()
-    {
+    public function getDateFormat() {
         return $this->getKey('DateFormat');
     }
 
@@ -182,8 +168,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getFirstDigitTimeout()
-    {
+    public function getFirstDigitTimeout() {
         return intval($this->getKey('FirstDigitTimeout'));
     }
 
@@ -192,8 +177,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getDigitTimeout()
-    {
+    public function getDigitTimeout() {
         return intval($this->getKey('DigitTimeout'));
     }
 
@@ -202,8 +186,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getDigitTimeoutChar()
-    {
+    public function getDigitTimeoutChar() {
         return $this->getKey('DigitTimeoutChar');
     }
 
@@ -212,8 +195,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getSCCPTosSignaling()
-    {
+    public function getSCCPTosSignaling() {
         return intval($this->getKey('SCCPTosSignaling'));
     }
 
@@ -222,8 +204,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getSCCPCosSignaling()
-    {
+    public function getSCCPCosSignaling() {
         return intval($this->getKey('SCCPCosSignaling'));
     }
 
@@ -232,8 +213,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getAUDIOTosRtp()
-    {
+    public function getAUDIOTosRtp() {
         return intval($this->getKey('AUDIOTosRtp'));
     }
 
@@ -242,8 +222,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getAUDIOCosRtp()
-    {
+    public function getAUDIOCosRtp() {
         return intval($this->getKey('AUDIOCosRtp'));
     }
 
@@ -252,8 +231,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getVIDEOTosVrtp()
-    {
+    public function getVIDEOTosVrtp() {
         return intval($this->getKey('VIDEOTosVrtp'));
     }
 
@@ -262,8 +240,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getVIDEOCosVrtp()
-    {
+    public function getVIDEOCosVrtp() {
         return intval($this->getKey('VIDEOCosVrtp'));
     }
 
@@ -272,8 +249,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->getKey('Context');
     }
 
@@ -282,8 +258,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->getKey('Language');
     }
 
@@ -292,8 +267,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getAccountcode()
-    {
+    public function getAccountcode() {
         return $this->getKey('Accountcode');
     }
 
@@ -302,8 +276,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getMusicclass()
-    {
+    public function getMusicclass() {
         return $this->getKey('Musicclass');
     }
 
@@ -312,8 +285,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getAMAFlags()
-    {
+    public function getAMAFlags() {
         return $this->getKey('AMAFlags');
     }
 
@@ -322,8 +294,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer[]
      */
-    public function getCallgroup()
-    {
+    public function getCallgroup() {
         return array_map('intval', explode(",", $this->getKey('Callgroup')));
     }
 
@@ -332,8 +303,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer[]
      */
-    public function getPickupgroup()
-    {
+    public function getPickupgroup() {
         return array_map('intval', explode(",", $this->getKey('Pickupgroup')));
     }
 
@@ -342,8 +312,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getPickupModeAnswer()
-    {
+    public function getPickupModeAnswer() {
         return $this->getBoolKey('PickupModeAnswer');
     }
 
@@ -352,14 +321,13 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return (string|int)[]
      */
-    public function getCodecsPreference()
-    {
-    	$ret = array();
-    	$codecs=explode(", ", substr($this->getKey('CodecsPreference'), 1, -1));
-    	foreach($codecs as $codec) {
-    		$codec_parts=explode(" ", $codec);
-    		$ret[] = array("name" => $codec_parts[0], "value" => substr($codec_parts[1], 1, -1));
-    	}
+    public function getCodecsPreference() {
+        $ret = array();
+        $codecs = explode(", ", substr($this->getKey('CodecsPreference'), 1, - 1));
+        foreach ($codecs as $codec) {
+            $codec_parts = explode(" ", $codec);
+            $ret[] = array("name"=>$codec_parts[0], "value"=>substr($codec_parts[1], 1, - 1));
+        }
         return $ret;
     }
 
@@ -368,9 +336,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getCFWDALL()
-    {
-    	return $this->getBoolKey('CFWDALL');
+    public function getCFWDALL() {
+        return $this->getBoolKey('CFWDALL');
     }
 
     /**
@@ -378,9 +345,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getCFWDBUSY()
-    {
-    	return $this->getBoolKey('CFWDBUSY');
+    public function getCFWDBUSY() {
+        return $this->getBoolKey('CFWDBUSY');
     }
 
     /**
@@ -388,9 +354,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getCFWDNOANSWER()
-    {
-    	return $this->getBoolKey('CFWDNOANSWER');
+    public function getCFWDNOANSWER() {
+        return $this->getBoolKey('CFWDNOANSWER');
     }
 
     /**
@@ -398,9 +363,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getCallEvents()
-    {
-    	return $this->getBoolKey('CallEvents');
+    public function getCallEvents() {
+        return $this->getBoolKey('CallEvents');
     }
 
     /**
@@ -408,9 +372,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getDNDFeatureEnabled()
-    {
-    	return $this->getBoolKey('DNDFeatureEnabled');
+    public function getDNDFeatureEnabled() {
+        return $this->getBoolKey('DNDFeatureEnabled');
     }
 
     /**
@@ -418,9 +381,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getPark()
-    {
-    	return $this->getBoolKey('Park');
+    public function getPark() {
+        return $this->getBoolKey('Park');
     }
 
     /**
@@ -428,9 +390,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getPrivateSoftkey()
-    {
-    	return $this->getBoolKey('PrivateSoftkey');
+    public function getPrivateSoftkey() {
+        return $this->getBoolKey('PrivateSoftkey');
     }
 
     /**
@@ -438,9 +399,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getEchoCancel()
-    {
-    	return $this->getBoolKey('EchoCancel');
+    public function getEchoCancel() {
+        return $this->getBoolKey('EchoCancel');
     }
 
     /**
@@ -448,9 +408,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getSilenceSuppression()
-    {
-    	return $this->getBoolKey('SilenceSuppression');
+    public function getSilenceSuppression() {
+        return $this->getBoolKey('SilenceSuppression');
     }
 
     /**
@@ -458,8 +417,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getEarlyRTP()
-    {
+    public function getEarlyRTP() {
         return $this->getKey('EarlyRTP');
     }
 
@@ -468,8 +426,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getAutoAnswerRingtime()
-    {
+    public function getAutoAnswerRingtime() {
         return $this->getKey('AutoAnswerRingtime');
     }
 
@@ -478,8 +435,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getAutoAnswerTone()
-    {
+    public function getAutoAnswerTone() {
         return $this->getKey('AutoAnswerTone');
     }
 
@@ -488,8 +444,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getRemoteHangupTone()
-    {
+    public function getRemoteHangupTone() {
         return intval($this->getKey('RemoteHangupTone'));
     }
 
@@ -498,8 +453,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getTransferTone()
-    {
+    public function getTransferTone() {
         return $this->getKey('TransferTone');
     }
 
@@ -508,9 +462,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getTransferOnHangup()
-    {
-    	return $this->getBoolKey('TransferOnHangup');
+    public function getTransferOnHangup() {
+        return $this->getBoolKey('TransferOnHangup');
     }
 
     /**
@@ -518,8 +471,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getCallwaitingTone()
-    {
+    public function getCallwaitingTone() {
         return intval($this->getKey('CallwaitingTone'));
     }
 
@@ -528,8 +480,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getCallwaitingInterval()
-    {
+    public function getCallwaitingInterval() {
         return intval($this->getKey('CallwaitingInterval'));
     }
 
@@ -538,8 +489,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getRegistrationContext()
-    {
+    public function getRegistrationContext() {
         return $this->getKey('RegistrationContext');
     }
 
@@ -548,9 +498,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getJitterbufferEnabled()
-    {
-    	return $this->getBoolKey('JitterbufferEnabled');
+    public function getJitterbufferEnabled() {
+        return $this->getBoolKey('JitterbufferEnabled');
     }
 
     /**
@@ -558,9 +507,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getJitterbufferForced()
-    {
-    	return $this->getBoolKey('JitterbufferForced');
+    public function getJitterbufferForced() {
+        return $this->getBoolKey('JitterbufferForced');
     }
 
     /**
@@ -568,8 +516,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getJitterbufferMaxSize()
-    {
+    public function getJitterbufferMaxSize() {
         return intval($this->getKey('JitterbufferMaxSize'));
     }
 
@@ -578,8 +525,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getJitterbufferResync()
-    {
+    public function getJitterbufferResync() {
         return intval($this->getKey('JitterbufferResync'));
     }
 
@@ -588,8 +534,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getJitterbufferImpl()
-    {
+    public function getJitterbufferImpl() {
         return $this->getKey('JitterbufferImpl');
     }
 
@@ -598,9 +543,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getJitterbufferLog()
-    {
-    	return $this->getBoolKey('JitterbufferLog');
+    public function getJitterbufferLog() {
+        return $this->getBoolKey('JitterbufferLog');
     }
 
     /**
@@ -608,8 +552,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getTokenFallBack()
-    {
+    public function getTokenFallBack() {
         return $this->getKey('TokenFallBack');
     }
 
@@ -618,8 +561,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getTokenBackoffTime()
-    {
+    public function getTokenBackoffTime() {
         return intval($this->getKey('TokenBackoffTime'));
     }
 
@@ -628,9 +570,8 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getHotlineEnabled()
-    {
-    	return $this->getBoolKey('HotlineEnabled');
+    public function getHotlineEnabled() {
+        return $this->getBoolKey('HotlineEnabled');
     }
 
     /**
@@ -638,8 +579,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getHotlineContext()
-    {
+    public function getHotlineContext() {
         return $this->getKey('HotlineContext');
     }
 
@@ -648,8 +588,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getHotlineExten()
-    {
+    public function getHotlineExten() {
         return $this->getKey('HotlineExten');
     }
 
@@ -658,10 +597,7 @@ class SCCPShowGlobalsResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getThreadpoolSize()
-    {
+    public function getThreadpoolSize() {
         return $this->getKey('ThreadpoolSize');
     }
-
-    
 }

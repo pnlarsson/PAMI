@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Response;
 
-use PAMI\Message\Response\ResponseMessage;
+use PAMI\Message\Response\ ResponseMessage;
 
 /**
  * A sccp show line response message from ami.
@@ -43,9 +43,8 @@ use PAMI\Message\Response\ResponseMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPShowLineResponse extends SCCPGenericResponse
-{
-
+class SCCPShowLineResponse extends SCCPGenericResponse {
+    
     /**
      * Constructor.
      *
@@ -53,26 +52,24 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return void
      */
-    public function __construct($rawContent)
-    {
+    public function __construct($rawContent) {
         parent::__construct($rawContent);
     }
-	
-	private function _getEventKey($keyname) {
-		return $this->_events[0]->getKey($keyname);
-	}
+    
+    private function _getEventKey($keyname) {
+        return $this->_events[0]->getKey($keyname);
+    }
+    
+    private function _getEventBoolKey($keyname) {
+        return $this->_events[0]->getBoolKey($keyname);
+    }
 
-	private function _getEventBoolKey($keyname) {
-		return $this->_events[0]->getBoolKey($keyname);
-	}
-	
     /**
      * Returns key: 'Name'.
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->_getEventKey('Name');
     }
 
@@ -81,8 +78,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->_getEventKey('Description');
     }
 
@@ -91,8 +87,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getLabel()
-    {
+    public function getLabel() {
         return $this->_getEventKey('Label');
     }
 
@@ -101,8 +96,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getID()
-    {
+    public function getID() {
         return intval($this->_getEventKey('ID'));
     }
 
@@ -111,8 +105,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getPin()
-    {
+    public function getPin() {
         return intval($this->_getEventKey('Pin'));
     }
 
@@ -121,8 +114,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getVoiceMailNumber()
-    {
+    public function getVoiceMailNumber() {
         return $this->_getEventKey('VoiceMailNumber');
     }
 
@@ -131,8 +123,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getTransferToVoicemail()
-    {
+    public function getTransferToVoicemail() {
         return $this->_getEventKey('TransferToVoicemail');
     }
 
@@ -141,8 +132,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getMeetMeEnabled()
-    {
+    public function getMeetMeEnabled() {
         return $this->_getEventBoolKey('MeetMeEnabled');
     }
 
@@ -151,8 +141,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getMeetMeNumber()
-    {
+    public function getMeetMeNumber() {
         return $this->_getEventKey('MeetMeNumber');
     }
 
@@ -161,8 +150,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getMeetMeOptions()
-    {
+    public function getMeetMeOptions() {
         return $this->_getEventKey('MeetMeOptions');
     }
 
@@ -171,8 +159,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->_getEventKey('Context');
     }
 
@@ -181,8 +168,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->_getEventKey('Language');
     }
 
@@ -191,8 +177,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getAccountCode()
-    {
+    public function getAccountCode() {
         return $this->_getEventKey('AccountCode');
     }
 
@@ -201,8 +186,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getMusicclass()
-    {
+    public function getMusicclass() {
         return $this->_getEventKey('Musicclass');
     }
 
@@ -211,8 +195,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getAmaFlags()
-    {
+    public function getAmaFlags() {
         return intval($this->_getEventKey('AmaFlags'));
     }
 
@@ -221,9 +204,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return int[]
      */
-    public function getCallGroup()
-    {
-    	return array_map('intval', explode(",", $this->_getEventKey('Callgroup')));
+    public function getCallGroup() {
+        return array_map('intval', explode(",", $this->_getEventKey('Callgroup')));
     }
 
     /**
@@ -231,9 +213,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return int[]
      */
-    public function getPickupGroup()
-    {
-    	return array_map('intval', explode(",", $this->_getEventKey('Pickupgroup')));
+    public function getPickupGroup() {
+        return array_map('intval', explode(",", $this->_getEventKey('Pickupgroup')));
     }
 
     /**
@@ -241,9 +222,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string[]
      */
-    public function getNamedCallGroup()
-    {
-    	return explode(",", $this->_getEventKey('NamedCallGroup'));
+    public function getNamedCallGroup() {
+        return explode(",", $this->_getEventKey('NamedCallGroup'));
     }
 
     /**
@@ -251,8 +231,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string[]
      */
-    public function getNamedPickupGroup()
-    {
+    public function getNamedPickupGroup() {
         return explode(",", $this->_getEventKey('NamedPickupGroup'));
     }
 
@@ -261,8 +240,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getParkingLot()
-    {
+    public function getParkingLot() {
         return $this->_getEventKey('ParkingLot');
     }
 
@@ -271,8 +249,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getCallerIDName()
-    {
+    public function getCallerIDName() {
         return $this->_getEventKey('CallerIDName');
     }
 
@@ -281,8 +258,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getCallerIDNumber()
-    {
+    public function getCallerIDNumber() {
         return $this->_getEventKey('CallerIDNumber');
     }
 
@@ -291,8 +267,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getIncomingCallsLimit()
-    {
+    public function getIncomingCallsLimit() {
         return intval($this->_getEventKey('IncomingCallsLimit'));
     }
 
@@ -301,8 +276,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getActiveChannelCount()
-    {
+    public function getActiveChannelCount() {
         return intval($this->_getEventKey('ActiveChannelCount'));
     }
 
@@ -311,8 +285,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getSecDialtoneDigits()
-    {
+    public function getSecDialtoneDigits() {
         return intval($this->_getEventKey('SecDialtoneDigits'));
     }
 
@@ -321,9 +294,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getSecDialtone()
-    {
-    	/* can be either integer or hex -> convert hex to int */
+    public function getSecDialtone() {
+        /* can be either integer or hex -> convert hex to int */
         return intval($this->_getEventKey('SecDialtone'), 0);
     }
 
@@ -332,9 +304,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getEchoCancellation()
-    {
-    	return $this->_getEventBoolKey('EchoCancellation');
+    public function getEchoCancellation() {
+        return $this->_getEventBoolKey('EchoCancellation');
     }
 
     /**
@@ -342,9 +313,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getSilenceSuppression()
-    {
-    	return $this->_getEventBoolKey('SilenceSuppression');
+    public function getSilenceSuppression() {
+        return $this->_getEventBoolKey('SilenceSuppression');
     }
 
     /**
@@ -352,9 +322,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getCanTransfer()
-    {
-    	return $this->_getEventBoolKey('CanTransfer');
+    public function getCanTransfer() {
+        return $this->_getEventBoolKey('CanTransfer');
     }
 
     /**
@@ -362,9 +331,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getDNDAction()
-    {
-    	return $this->_getEventKey('DNDAction');
+    public function getDNDAction() {
+        return $this->_getEventKey('DNDAction');
     }
 
     /**
@@ -372,9 +340,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getIsRealtimeLine()
-    {
-    	return $this->_getEventBoolKey('IsRealtimeLine');
+    public function getIsRealtimeLine() {
+        return $this->_getEventBoolKey('IsRealtimeLine');
     }
 
     /**
@@ -382,9 +349,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getPendingDelete()
-    {
-    	return $this->_getEventBoolKey('PendingDelete');
+    public function getPendingDelete() {
+        return $this->_getEventBoolKey('PendingDelete');
     }
 
     /**
@@ -392,9 +358,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getPendingUpdate()
-    {
-    	return $this->_getEventBoolKey('PendingUpdate');
+    public function getPendingUpdate() {
+        return $this->_getEventBoolKey('PendingUpdate');
     }
 
     /**
@@ -402,8 +367,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getRegistrationExtension()
-    {
+    public function getRegistrationExtension() {
         return $this->_getEventKey('RegistrationExtension');
     }
 
@@ -412,8 +376,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return string
      */
-    public function getRegistrationContext()
-    {
+    public function getRegistrationContext() {
         return $this->_getEventKey('RegistrationContext');
     }
 
@@ -422,9 +385,8 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return boolean
      */
-    public function getAdhocNumberAssigned()
-    {
-    	return $this->_getEventBoolKey('AdhocNumberAssigned');
+    public function getAdhocNumberAssigned() {
+        return $this->_getEventBoolKey('AdhocNumberAssigned');
     }
 
     /**
@@ -432,8 +394,7 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getMessageWaitingNew()
-    {
+    public function getMessageWaitingNew() {
         return intval($this->_getEventKey('MessageWaitingNew'));
     }
 
@@ -442,50 +403,46 @@ class SCCPShowLineResponse extends SCCPGenericResponse
      *
      * @return integer
      */
-    public function getMessageWaitingOld()
-    {
+    public function getMessageWaitingOld() {
         return intval($this->_getEventKey('MessageWaitingOld'));
     }
 
-	/**
-	 * Returns events[] related to AttachedDevices from the tables['AttachedDevices']
-	 *
-	 * @return events[]
-	 */
-	public function getAttachedDevices()
-	{
-		$res = array();
-		if ($this->hasTable() && array_key_exists('AttachedDevices', $this->_tables)) {
-			$res = $this->_tables['AttachedDevices'];
-		}
-		return $res;
-	}
+    /**
+     * Returns events[] related to AttachedDevices from the tables['AttachedDevices']
+     *
+     * @return events[]
+     */
+    public function getAttachedDevices() {
+        $res = array();
+        if ($this->hasTable() && array_key_exists('AttachedDevices', $this->_tables)) {
+            $res = $this->_tables['AttachedDevices'];
+        }
+        return $res;
+    }
 
-	/**
-	 * Returns events[] related to Mailboxes from the tables['Mailboxes']
-	 *
-	 * @return events[]
-	 */
-	public function getMailboxes()
-	{
-		$res = array();
-		if ($this->hasTable() && array_key_exists('Mailboxes', $this->_tables)) {
-			$res = $this->_tables['Mailboxes'];
-		}
-		return $res;
-	}
+    /**
+     * Returns events[] related to Mailboxes from the tables['Mailboxes']
+     *
+     * @return events[]
+     */
+    public function getMailboxes() {
+        $res = array();
+        if ($this->hasTable() && array_key_exists('Mailboxes', $this->_tables)) {
+            $res = $this->_tables['Mailboxes'];
+        }
+        return $res;
+    }
 
-	/**
-	 * Returns events[] related to Variables from the tables['Variables']
-	 *
-	 * @return events[]
-	 */
-	public function getVariables()
-	{
-		$res = array();
-		if ($this->hasTable() && array_key_exists('Variables', $this->_tables)) {
-			$res = $this->_tables['Variables'];
-		}
-		return $res;
-	}
+    /**
+     * Returns events[] related to Variables from the tables['Variables']
+     *
+     * @return events[]
+     */
+    public function getVariables() {
+        $res = array();
+        if ($this->hasTable() && array_key_exists('Variables', $this->_tables)) {
+            $res = $this->_tables['Variables'];
+        }
+        return $res;
+    }
 }

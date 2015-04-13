@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class TableStartEvent extends EventMessage
-{
+class TableStartEvent extends EventMessage {
     /**
      * Returns key: 'TableName'.
      *
      * @return string
      */
-    public function getTableName()
-    {
+    public function getTableName() {
         return $this->getKey('TableName');
     }
 }

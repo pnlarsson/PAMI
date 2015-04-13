@@ -41,15 +41,13 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPShowLinesAction extends ActionMessage
-{
+class SCCPShowLinesAction extends ActionMessage {
     /**
      * Constructor.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct('SCCPShowLines');
         $this->setResponseHandler("SCCPGeneric");
     }

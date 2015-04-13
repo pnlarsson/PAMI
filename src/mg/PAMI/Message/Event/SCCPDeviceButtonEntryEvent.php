@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPDeviceButtonEntryEvent extends EventMessage
-{
+class SCCPDeviceButtonEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,8 +58,7 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
 
@@ -70,8 +67,7 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return intval($this->getKey('Id'));
     }
 
@@ -80,8 +76,7 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getInst()
-    {
+    public function getInst() {
         return intval($this->getKey('Inst'));
     }
 
@@ -90,8 +85,7 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getTypeStr()
-    {
+    public function getTypeStr() {
         return $this->getKey('TypeStr');
     }
 
@@ -100,8 +94,7 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getType()
-    {
+    public function getType() {
         return intval($this->getKey('Type'));
     }
 
@@ -110,9 +103,8 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getPendingDelete()
-    {
-    	return $this->getBoolKey('pendDel');
+    public function getPendingDelete() {
+        return $this->getBoolKey('pendDel');
     }
 
     /**
@@ -120,9 +112,8 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getPendingUpdate()
-    {
-    	return $this->getBoolKey('pendUpdt');
+    public function getPendingUpdate() {
+        return $this->getBoolKey('pendUpdt');
     }
 
     /**
@@ -130,8 +121,7 @@ class SCCPDeviceButtonEntryEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getDefault()
-    {
-    	return $this->getBoolKey('Default');
+    public function getDefault() {
+        return $this->getBoolKey('Default');
     }
 }

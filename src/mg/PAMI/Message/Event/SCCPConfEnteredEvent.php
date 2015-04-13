@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when the 'SCCP Conference Entered' Event arrives.
@@ -43,46 +43,40 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPConfEnteredEvent extends EventMessage
-{
-	/**
-	 * Returns key: 'ConfId'.
-	 *
-	 * @return integer
-	 */
-	public function getConfId()
-	{
-      return intval($this->getKey('ConfId'));
-	}
+class SCCPConfEnteredEvent extends EventMessage {
+    /**
+     * Returns key: 'ConfId'.
+     *
+     * @return integer
+     */
+    public function getConfId() {
+        return intval($this->getKey('ConfId'));
+    }
 
-	/**
-	 * Returns key: 'PartId'.
-	 *
-	 * @return integer
-	 */
-	public function getPartId()
-	{
-      return intval($this->getKey('PartId'));
-	}
+    /**
+     * Returns key: 'PartId'.
+     *
+     * @return integer
+     */
+    public function getPartId() {
+        return intval($this->getKey('PartId'));
+    }
 
-	/**
-	 * Returns key: 'Channel'.
-	 *
-	 * @return string
-	 */
-	public function getChannel()
-	{
-      return $this->getKey('Channel');
-	}
+    /**
+     * Returns key: 'Channel'.
+     *
+     * @return string
+     */
+    public function getChannel() {
+        return $this->getKey('Channel');
+    }
 
-	/**
-	 * Returns key: 'Uniqueid'.
-	 *
-	 * @return string
-	 */
-	public function getUniqueid()
-	{
-      return $this->getKey('Uniqueid');
-	}
-
+    /**
+     * Returns key: 'Uniqueid'.
+     *
+     * @return string
+     */
+    public function getUniqueid() {
+        return $this->getKey('Uniqueid');
+    }
 }

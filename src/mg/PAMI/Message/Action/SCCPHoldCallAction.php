@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Action;
 
-use PAMI\Exception\PAMIException;
+use PAMI\ Exception\ PAMIException;
 
 /**
  * Hold/Resume SCCP Sevice action message.
@@ -43,8 +43,7 @@ use PAMI\Exception\PAMIException;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPHoldCallAction extends ActionMessage
-{
+class SCCPHoldCallAction extends ActionMessage {
     /**
      * Constructor.
      *
@@ -55,8 +54,7 @@ class SCCPHoldCallAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($ChannelId, $DeviceName, $Hold = true, $SwapChannels = false)
-    {
+    public function __construct($ChannelId, $DeviceName, $Hold = true, $SwapChannels = false) {
         parent::__construct('SCCPHoldCall');
         
         $this->setKey('ChannelId', $ChannelId);
@@ -64,7 +62,7 @@ class SCCPHoldCallAction extends ActionMessage
         if ($Hold == true) {
             $this->setKey('Hold', 'on');
             if ($SwapChannels == true) {
-    	        throw new PAMIException('Cannot SwapChannels when putting on hold.');
+                throw new PAMIException('Cannot SwapChannels when putting on hold.');
             }
             $this->setKey('SwapChannels', 'off');
         } else {

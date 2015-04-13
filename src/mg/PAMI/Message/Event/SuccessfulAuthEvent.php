@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SuccessfulAuthEvent extends EventMessage
-{
+class SuccessfulAuthEvent extends EventMessage {
     /**
      * Returns key: 'Privilege'.
      *
      * @return string
      */
-    public function getPrivilege()
-    {
+    public function getPrivilege() {
         return $this->getKey('Privilege');
     }
 
@@ -60,8 +58,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return int
      */
-    public function getSequenceNumber()
-    {
+    public function getSequenceNumber() {
         return $this->getKey('SequenceNumber');
     }
 
@@ -70,8 +67,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->getKey('File');
     }
 
@@ -80,8 +76,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return int
      */
-    public function getLine()
-    {
+    public function getLine() {
         return $this->getKey('Line');
     }
 
@@ -90,19 +85,16 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getFunc()
-    {
+    public function getFunc() {
         return $this->getKey('Func');
     }
-
 
     /**
      * Returns key: 'EventTV'.
      *
      * @return string
      */
-    public function getEventTV()
-    {
+    public function getEventTV() {
         return $this->getKey('EventTV');
     }
 
@@ -111,18 +103,16 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getSeverity()
-    {
+    public function getSeverity() {
         return $this->getKey('Severity');
     }
-    
+
     /**
      * Returns key: 'Service'.
      *
      * @return string
      */
-    public function getService()
-    {
+    public function getService() {
         return $this->getKey('Service');
     }
 
@@ -131,8 +121,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return int
      */
-    public function getEventVersion()
-    {
+    public function getEventVersion() {
         return $this->getKey('EventVersion');
     }
 
@@ -141,8 +130,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountID()
-    {
+    public function getAccountID() {
         return $this->getKey('AccountID');
     }
 
@@ -151,8 +139,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getSessionID()
-    {
+    public function getSessionID() {
         return $this->getKey('SessionID');
     }
 
@@ -161,8 +148,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getLocalAddress()
-    {
+    public function getLocalAddress() {
         return $this->getKey('LocalAddress');
     }
 
@@ -171,8 +157,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getRemoteAddress()
-    {
+    public function getRemoteAddress() {
         return $this->getKey('RemoteAddress');
     }
 
@@ -181,8 +166,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getUsingPassword()
-    {
+    public function getUsingPassword() {
         return $this->getBoolKey('UsingPassword');
     }
 
@@ -191,8 +175,7 @@ class SuccessfulAuthEvent extends EventMessage
      *
      * @return string
      */
-    public function getSessionTV()
-    {
+    public function getSessionTV() {
         return $this->getKey('SessionTV');
     }
 }

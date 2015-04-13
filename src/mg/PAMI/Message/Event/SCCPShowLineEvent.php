@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPShowLineEvent extends EventMessage
-{
+class SCCPShowLineEvent extends EventMessage {
     /**
      * Returns key: 'Name'.
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->getKey('Name');
     }
 
@@ -60,8 +58,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->getKey('Description');
     }
 
@@ -70,8 +67,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getLabel()
-    {
+    public function getLabel() {
         return $this->getKey('Label');
     }
 
@@ -80,8 +76,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getID()
-    {
+    public function getID() {
         return intval($this->getKey('ID'));
     }
 
@@ -90,8 +85,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getPin()
-    {
+    public function getPin() {
         return intval($this->getKey('Pin'));
     }
 
@@ -100,8 +94,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getVoiceMailNumber()
-    {
+    public function getVoiceMailNumber() {
         return $this->getKey('VoiceMailNumber');
     }
 
@@ -110,8 +103,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getTransferToVoicemail()
-    {
+    public function getTransferToVoicemail() {
         return $this->getKey('TransferToVoicemail');
     }
 
@@ -120,8 +112,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getMeetMeEnabled()
-    {
+    public function getMeetMeEnabled() {
         return $this->getBoolKey('MeetMeEnabled');
     }
 
@@ -130,8 +121,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getMeetMeNumber()
-    {
+    public function getMeetMeNumber() {
         return $this->getKey('MeetMeNumber');
     }
 
@@ -140,8 +130,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getMeetMeOptions()
-    {
+    public function getMeetMeOptions() {
         return $this->getKey('MeetMeOptions');
     }
 
@@ -150,8 +139,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getContext()
-    {
+    public function getContext() {
         return $this->getKey('Context');
     }
 
@@ -160,8 +148,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getLanguage()
-    {
+    public function getLanguage() {
         return $this->getKey('Language');
     }
 
@@ -170,8 +157,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getAccountCode()
-    {
+    public function getAccountCode() {
         return $this->getKey('AccountCode');
     }
 
@@ -180,8 +166,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getMusicclass()
-    {
+    public function getMusicclass() {
         return $this->getKey('Musicclass');
     }
 
@@ -190,8 +175,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getAmaFlags()
-    {
+    public function getAmaFlags() {
         return intval($this->getKey('AmaFlags'));
     }
 
@@ -200,9 +184,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return int[]
      */
-    public function getCallGroup()
-    {
-    	return array_map('intval', explode(",", $this->getKey('Callgroup')));
+    public function getCallGroup() {
+        return array_map('intval', explode(",", $this->getKey('Callgroup')));
     }
 
     /**
@@ -210,9 +193,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return int[]
      */
-    public function getPickupGroup()
-    {
-    	return array_map('intval', explode(",", $this->getKey('Pickupgroup')));
+    public function getPickupGroup() {
+        return array_map('intval', explode(",", $this->getKey('Pickupgroup')));
     }
 
     /**
@@ -220,9 +202,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string[]
      */
-    public function getNamedCallGroup()
-    {
-    	return explode(",", $this->getKey('NamedCallGroup'));
+    public function getNamedCallGroup() {
+        return explode(",", $this->getKey('NamedCallGroup'));
     }
 
     /**
@@ -230,8 +211,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string[]
      */
-    public function getNamedPickupGroup()
-    {
+    public function getNamedPickupGroup() {
         return explode(",", $this->getKey('NamedPickupGroup'));
     }
 
@@ -240,8 +220,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getParkingLot()
-    {
+    public function getParkingLot() {
         return $this->getKey('ParkingLot');
     }
 
@@ -250,8 +229,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDName()
-    {
+    public function getCallerIDName() {
         return $this->getKey('CallerIDName');
     }
 
@@ -260,8 +238,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallerIDNumber()
-    {
+    public function getCallerIDNumber() {
         return $this->getKey('CallerIDNumber');
     }
 
@@ -270,8 +247,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getIncomingCallsLimit()
-    {
+    public function getIncomingCallsLimit() {
         return intval($this->getKey('IncomingCallsLimit'));
     }
 
@@ -280,8 +256,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getActiveChannelCount()
-    {
+    public function getActiveChannelCount() {
         return intval($this->getKey('ActiveChannelCount'));
     }
 
@@ -290,8 +265,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getSecDialtoneDigits()
-    {
+    public function getSecDialtoneDigits() {
         return intval($this->getKey('SecDialtoneDigits'));
     }
 
@@ -300,9 +274,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getSecDialtone()
-    {
-    	/* can be either integer or hex -> convert hex to int */
+    public function getSecDialtone() {
+        /* can be either integer or hex -> convert hex to int */
         return intval($this->getKey('SecDialtone'), 0);
     }
 
@@ -311,9 +284,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getEchoCancellation()
-    {
-    	return $this->getBoolKey('EchoCancellation');
+    public function getEchoCancellation() {
+        return $this->getBoolKey('EchoCancellation');
     }
 
     /**
@@ -321,9 +293,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getSilenceSuppression()
-    {
-    	return $this->getBoolKey('SilenceSuppression');
+    public function getSilenceSuppression() {
+        return $this->getBoolKey('SilenceSuppression');
     }
 
     /**
@@ -331,9 +302,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getCanTransfer()
-    {
-    	return $this->getBoolKey('CanTransfer');
+    public function getCanTransfer() {
+        return $this->getBoolKey('CanTransfer');
     }
 
     /**
@@ -341,9 +311,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getDNDAction()
-    {
-    	return $this->getKey('DNDAction');
+    public function getDNDAction() {
+        return $this->getKey('DNDAction');
     }
 
     /**
@@ -351,9 +320,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getIsRealtimeLine()
-    {
-    	return $this->getBoolKey('IsRealtimeLine');
+    public function getIsRealtimeLine() {
+        return $this->getBoolKey('IsRealtimeLine');
     }
 
     /**
@@ -361,9 +329,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getPendingDelete()
-    {
-    	return $this->getBoolKey('PendingDelete');
+    public function getPendingDelete() {
+        return $this->getBoolKey('PendingDelete');
     }
 
     /**
@@ -371,9 +338,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getPendingUpdate()
-    {
-    	return $this->getBoolKey('PendingUpdate');
+    public function getPendingUpdate() {
+        return $this->getBoolKey('PendingUpdate');
     }
 
     /**
@@ -381,8 +347,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getRegistrationExtension()
-    {
+    public function getRegistrationExtension() {
         return $this->getKey('RegistrationExtension');
     }
 
@@ -391,8 +356,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return string
      */
-    public function getRegistrationContext()
-    {
+    public function getRegistrationContext() {
         return $this->getKey('RegistrationContext');
     }
 
@@ -401,9 +365,8 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getAdhocNumberAssigned()
-    {
-    	return $this->getBoolKey('AdhocNumberAssigned');
+    public function getAdhocNumberAssigned() {
+        return $this->getBoolKey('AdhocNumberAssigned');
     }
 
     /**
@@ -411,8 +374,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getMessageWaitingNew()
-    {
+    public function getMessageWaitingNew() {
         return intval($this->getKey('MessageWaitingNew'));
     }
 
@@ -421,8 +383,7 @@ class SCCPShowLineEvent extends EventMessage
      *
      * @return integer
      */
-    public function getMessageWaitingOld()
-    {
+    public function getMessageWaitingOld() {
         return intval($this->getKey('MessageWaitingOld'));
     }
 }

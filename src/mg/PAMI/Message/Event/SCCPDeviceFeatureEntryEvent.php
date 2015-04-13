@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPDeviceFeatureEntryEvent extends EventMessage
-{
+class SCCPDeviceFeatureEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,8 +58,7 @@ class SCCPDeviceFeatureEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
 
@@ -70,8 +67,7 @@ class SCCPDeviceFeatureEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return intval($this->getKey('Id'));
     }
 
@@ -80,8 +76,7 @@ class SCCPDeviceFeatureEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->getKey('Name');
     }
 
@@ -90,8 +85,7 @@ class SCCPDeviceFeatureEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getOptions()
-    {
+    public function getOptions() {
         return $this->getKey('Options');
     }
 
@@ -100,8 +94,7 @@ class SCCPDeviceFeatureEntryEvent extends EventMessage
      *
      * @return integer
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return intval($this->getKey('Status'));
     }
 }

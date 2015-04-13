@@ -29,7 +29,8 @@
  */
 namespace PAMI\Message\Action;
 
-use \PAMI\Exception\PAMIException;
+use \ PAMI\ Exception\ PAMIException;
+
 /**
  * SCCP Conference Control Action
  *
@@ -42,8 +43,7 @@ use \PAMI\Exception\PAMIException;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPConferenceAction extends ActionMessage
-{
+class SCCPConferenceAction extends ActionMessage {
     /**
      * Constructor.
      *
@@ -53,15 +53,14 @@ class SCCPConferenceAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($ConferenceId, $ParticipantId, $Command)
-    {
+    public function __construct($ConferenceId, $ParticipantId, $Command) {
         parent::__construct('SCCPConference');
         $this->setKey('ConferenceId', $ConferenceId);
         $this->setKey('ParticipantId', $ParticipantId);
         if (in_array(strtolower($Command), array('endconf', 'kick', 'mute', 'invite', 'moderate'))) {
-	        $this->setKey('Command', strtolower($Command));
-		} else {
-			throw new PAMIException('State has to be one of \'endconf\', \'kick\', \'mute\', \'invite\', \'moderate\'.');
-		}
+            $this->setKey('Command', strtolower($Command));
+        } else {
+            throw new PAMIException('State has to be one of \'endconf\', \'kick\', \'mute\', \'invite\', \'moderate\'.');
+        }
     }
 }

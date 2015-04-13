@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when SCCPConferenceEntry arrives.
@@ -43,76 +43,67 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPConferenceEntryEvent extends EventMessage
-{
-	/**
-	 * Returns key: 'ChannelType'.
-	 *
-	 * @return string
-	 */
-	public function getChannelType()
-	{
-      return $this->getKey('ChannelType');
-	}
+class SCCPConferenceEntryEvent extends EventMessage {
+    /**
+     * Returns key: 'ChannelType'.
+     *
+     * @return string
+     */
+    public function getChannelType() {
+        return $this->getKey('ChannelType');
+    }
 
-	/**
-	 * Returns key: 'ChannelObjectType'.
-	 *
-	 * @return string
-	 */
-	public function getChannelObjectType()
-	{
-      return $this->getKey('ChannelObjectType');
-	}
+    /**
+     * Returns key: 'ChannelObjectType'.
+     *
+     * @return string
+     */
+    public function getChannelObjectType() {
+        return $this->getKey('ChannelObjectType');
+    }
 
-	/**
-	 * Returns key: 'Id'.
-	 *
-	 * @return integer
-	 */
-	public function getId()
-	{
-      return intval($this->getKey('Id'));
-	}
+    /**
+     * Returns key: 'Id'.
+     *
+     * @return integer
+     */
+    public function getId() {
+        return intval($this->getKey('Id'));
+    }
 
-	/**
-	 * Returns key: 'Participants'.
-	 *
-	 * @return integer
-	 */
-	public function getParticipants()
-	{
-      return intval($this->getKey('Participants'));
-	}
+    /**
+     * Returns key: 'Participants'.
+     *
+     * @return integer
+     */
+    public function getParticipants() {
+        return intval($this->getKey('Participants'));
+    }
 
-	/**
-	 * Returns key: 'Moderators'.
-	 *
-	 * @return integer
-	 */
-	public function getModerators()
-	{
-      return intval($this->getKey('Moderators'));
-	}
+    /**
+     * Returns key: 'Moderators'.
+     *
+     * @return integer
+     */
+    public function getModerators() {
+        return intval($this->getKey('Moderators'));
+    }
 
-	/**
-	 * Returns key: 'Announce'.
-	 *
-	 * @return boolean
-	 */
-	public function getAnnounce()
-	{
-      return $this->getBoolKey('Announce');
-	}
+    /**
+     * Returns key: 'Announce'.
+     *
+     * @return boolean
+     */
+    public function getAnnounce() {
+        return $this->getBoolKey('Announce');
+    }
 
-	/**
-	 * Returns key: 'MuteOnEntry'.
-	 *
-	 * @return boolean
-	 */
-	public function getMuteOnEntry()
-	{
-      return $this->getBoolKey('MuteOnEntry');
-	}
-
+    /**
+     * Returns key: 'MuteOnEntry'.
+     *
+     * @return boolean
+     */
+    public function getMuteOnEntry() {
+        return $this->getBoolKey('MuteOnEntry');
+    }
 }

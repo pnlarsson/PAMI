@@ -41,8 +41,7 @@ namespace PAMI\Message\Action;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPMessageDevicesAction extends ActionMessage
-{
+class SCCPMessageDevicesAction extends ActionMessage {
     /**
      * Constructor.
      *
@@ -52,18 +51,17 @@ class SCCPMessageDevicesAction extends ActionMessage
      *
      * @return void
      */
-    public function __construct($MessageText, $Beep=false, $Timeout=false)
-    {
+    public function __construct($MessageText, $Beep = false, $Timeout = false) {
         parent::__construct('SCCPMessageDevices');
         
         $this->setKey('MessageText', $MessageText);
-
+        
         if ($Beep != false) {
-	        $this->setKey('Beep', 'beep');
-	}
-
+            $this->setKey('Beep', 'beep');
+        }
+        
         if ($Timeout != false) {
-        	$this->setKey('Timeout', intval($Timeout));
+            $this->setKey('Timeout', intval($Timeout));
         }
     }
 }

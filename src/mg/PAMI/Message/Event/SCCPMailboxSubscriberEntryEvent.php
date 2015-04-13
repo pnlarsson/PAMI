@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when SCCPMailboxSubscriberEntry arrives.
@@ -43,86 +43,76 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPMailboxSubscriberEntryEvent extends EventMessage
-{
-	/**
-	 * Returns key: 'ChannelType'.
-	 *
-	 * @return string
-	 */
-	public function getChannelType()
-	{
-      return $this->getKey('ChannelType');
-	}
+class SCCPMailboxSubscriberEntryEvent extends EventMessage {
+    /**
+     * Returns key: 'ChannelType'.
+     *
+     * @return string
+     */
+    public function getChannelType() {
+        return $this->getKey('ChannelType');
+    }
 
-	/**
-	 * Returns key: 'ChannelObjectType'.
-	 *
-	 * @return string
-	 */
-	public function getChannelObjectType()
-	{
-      return $this->getKey('ChannelObjectType');
-	}
+    /**
+     * Returns key: 'ChannelObjectType'.
+     *
+     * @return string
+     */
+    public function getChannelObjectType() {
+        return $this->getKey('ChannelObjectType');
+    }
 
-	/**
-	 * Returns key: 'Mailbox'.
-	 *
-	 * @return string
-	 */
-	public function getMailbox()
-	{
-      return $this->getKey('Mailbox');
-	}
+    /**
+     * Returns key: 'Mailbox'.
+     *
+     * @return string
+     */
+    public function getMailbox() {
+        return $this->getKey('Mailbox');
+    }
 
-	/**
-	 * Returns key: 'LineName'.
-	 *
-	 * @return string
-	 */
-	public function getLineName()
-	{
-      return $this->getKey('LineName');
-	}
+    /**
+     * Returns key: 'LineName'.
+     *
+     * @return string
+     */
+    public function getLineName() {
+        return $this->getKey('LineName');
+    }
 
-	/**
-	 * Returns key: 'Context'.
-	 *
-	 * @return string
-	 */
-	public function getContext()
-	{
-      return $this->getKey('Context');
-	}
+    /**
+     * Returns key: 'Context'.
+     *
+     * @return string
+     */
+    public function getContext() {
+        return $this->getKey('Context');
+    }
 
-	/**
-	 * Returns key: 'New'.
-	 *
-	 * @return integer
-	 */
-	public function getNew()
-	{
-      return intval($this->getKey('New'));
-	}
+    /**
+     * Returns key: 'New'.
+     *
+     * @return integer
+     */
+    public function getNew() {
+        return intval($this->getKey('New'));
+    }
 
-	/**
-	 * Returns key: 'Old'.
-	 *
-	 * @return integer
-	 */
-	public function getOld()
-	{
-      return intval($this->getKey('Old'));
-	}
+    /**
+     * Returns key: 'Old'.
+     *
+     * @return integer
+     */
+    public function getOld() {
+        return intval($this->getKey('Old'));
+    }
 
-	/**
-	 * Returns key: 'Sub'.
-	 *
-	 * @return boolean
-	 */
-	public function getSub()
-	{
-      return $this->getBoolKey('Sub');
-	}
-
+    /**
+     * Returns key: 'Sub'.
+     *
+     * @return boolean
+     */
+    public function getSub() {
+        return $this->getBoolKey('Sub');
+    }
 }

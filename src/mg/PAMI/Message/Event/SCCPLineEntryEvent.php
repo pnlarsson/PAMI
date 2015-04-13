@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPLineEntryEvent extends EventMessage
-{
+class SCCPLineEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,8 +58,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
 
@@ -70,8 +67,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getExten()
-    {
+    public function getExten() {
         return $this->getKey('Exten');
     }
 
@@ -80,8 +76,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getSubscriptionNumber()
-    {
+    public function getSubscriptionNumber() {
         return $this->getKey('SubscriptionNumber');
     }
 
@@ -90,8 +85,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getLabel()
-    {
+    public function getLabel() {
         return $this->getKey('Label');
     }
 
@@ -100,8 +94,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDevice()
-    {
+    public function getDevice() {
         return $this->getKey('Device');
     }
 
@@ -110,8 +103,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getMWI()
-    {
+    public function getMWI() {
         return $this->getKey('MWI');
     }
 
@@ -120,8 +112,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getActiveChannels()
-    {
+    public function getActiveChannels() {
         return $this->getKey('ActiveChannels');
     }
 
@@ -130,8 +121,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelState()
-    {
+    public function getChannelState() {
         return $this->getKey('ChannelState');
     }
 
@@ -140,8 +130,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCallType()
-    {
+    public function getCallType() {
         return $this->getKey('CallType');
     }
 
@@ -150,8 +139,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getPartyName()
-    {
+    public function getPartyName() {
         return $this->getKey('PartyName');
     }
 
@@ -160,9 +148,7 @@ class SCCPLineEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getCapabilities()
-    {
+    public function getCapabilities() {
         return $this->getKey('Capabilities');
     }
-
 }

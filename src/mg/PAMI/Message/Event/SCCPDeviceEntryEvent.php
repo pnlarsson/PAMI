@@ -29,7 +29,7 @@
  */
 namespace PAMI\Message\Event;
 
-use PAMI\Message\Event\EventMessage;
+use PAMI\Message\Event\ EventMessage;
 
 /**
  * Event triggered when an agent logs in.
@@ -43,15 +43,13 @@ use PAMI\Message\Event\EventMessage;
  * @license    http://marcelog.github.com/PAMI/ Apache License 2.0
  * @link       http://marcelog.github.com/PAMI/
  */
-class SCCPDeviceEntryEvent extends EventMessage
-{
+class SCCPDeviceEntryEvent extends EventMessage {
     /**
      * Returns key: 'ChannelType'.
      *
      * @return string
      */
-    public function getChannelType()
-    {
+    public function getChannelType() {
         return $this->getKey('ChannelType');
     }
 
@@ -60,8 +58,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getChannelObjectType()
-    {
+    public function getChannelObjectType() {
         return $this->getKey('ChannelObjectType');
     }
 
@@ -70,8 +67,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->getKey('Descr');
     }
 
@@ -80,8 +76,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->getKey('Address');
     }
 
@@ -90,8 +85,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getMac()
-    {
+    public function getMac() {
         return $this->getKey('Mac');
     }
 
@@ -100,8 +94,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getRegState()
-    {
+    public function getRegState() {
         return $this->getKey('RegState');
     }
 
@@ -110,8 +103,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getToken()
-    {
+    public function getToken() {
         return $this->getKey('Token');
     }
 
@@ -120,8 +112,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getRegTime()
-    {
+    public function getRegTime() {
         return $this->getKey('RegTime');
     }
 
@@ -130,8 +121,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return boolean
      */
-    public function getActive()
-    {
+    public function getActive() {
         return $this->getBoolKey('Act');
     }
 
@@ -140,8 +130,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return int
      */
-    public function getLines()
-    {
+    public function getLines() {
         return intval($this->getKey('Lines'));
     }
 
@@ -150,8 +139,7 @@ class SCCPDeviceEntryEvent extends EventMessage
      *
      * @return string
      */
-    public function getNat()
-    {
+    public function getNat() {
         return $this->getKey('Nat');
     }
 }
