@@ -1,6 +1,6 @@
 <?php
 /**
- * Event triggered when an agent logs in.
+ * Event triggered by SCCPShowDevice.
  *
  * PHP Version 5
  *
@@ -33,7 +33,7 @@ use PAMI\Message\Event\EventMessage;
 use PAMI\Exception\PAMIException;
 
 /**
- * Event triggered when an agent logs in.
+ * Event triggered by SCCPShowDevice.
  *
  * PHP Version 5
  *

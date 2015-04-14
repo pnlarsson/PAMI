@@ -30,7 +30,7 @@
 namespace PAMI\Message\Action;
 
 /**
- * Hangup action message.
+ * SCCP Send TokenAck action message.
  *
  * PHP Version 5
  *

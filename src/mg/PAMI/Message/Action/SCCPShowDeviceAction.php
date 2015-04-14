@@ -30,7 +30,7 @@
 namespace PAMI\Message\Action;
 
 /**
- * Hangup action message.
+ * SCCP Show Device action message.
  *
  * PHP Version 5
  *

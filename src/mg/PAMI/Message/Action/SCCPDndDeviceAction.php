@@ -32,7 +32,7 @@ namespace PAMI\Message\Action;
 use PAMI\Exception\PAMIException;
 
 /**
- * Hangup action message.
+ * SCCP Set Do not Disturb action message.
  *
  * PHP Version 5
  *

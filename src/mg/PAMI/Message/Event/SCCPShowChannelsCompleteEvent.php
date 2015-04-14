@@ -1,6 +1,6 @@
 <?php
 /**
- * Event triggered when an agent logs in.
+ * Event triggered by SCCPShowChannels Entries.
  *
  * PHP Version 5
  *
@@ -32,7 +32,7 @@ namespace PAMI\Message\Event;
 use PAMI\Message\Event\EventMessage;
 
 /**
- * Event triggered when an agent logs in.
+ * Event triggered by SCCPShowChannels Entries.
  *
  * PHP Version 5
  *

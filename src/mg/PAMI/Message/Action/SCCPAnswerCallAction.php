@@ -30,7 +30,7 @@
 namespace PAMI\Message\Action;
 
 /**
- * Answer Call action message.
+ * SCCP Answer Call action message.
  *
  * PHP Version 5
  *
