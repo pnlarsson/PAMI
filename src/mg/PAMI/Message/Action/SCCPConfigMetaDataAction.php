@@ -30,7 +30,7 @@
 namespace PAMI\Message\Action;
 
 /**
- * Hangup action message.
+ * Get SCCPConfigMetaData action message.
  *
  * PHP Version 5
  *

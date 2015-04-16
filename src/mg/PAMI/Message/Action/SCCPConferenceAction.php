@@ -30,6 +30,7 @@
 namespace PAMI\Message\Action;
 
 use \PAMI\Exception\PAMIException;
+
 /**
  * SCCP Conference Control Action
  *
